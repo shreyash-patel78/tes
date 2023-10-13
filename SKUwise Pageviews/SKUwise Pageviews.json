@@ -1,0 +1,34 @@
+{
+  "name" : "SKUwise Pageviews",
+  "description" : "",
+  "role" : "arn:aws:iam::578236606604:role/AWSGlueServiceRoleAnalytics",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "pythonshell",
+    "scriptLocation" : "s3://aws-glue-assets-578236606604-us-east-1/scripts/SKUwise Pageviews.py",
+    "pythonVersion" : "3.9"
+  },
+  "defaultArguments" : {
+    "--enable-job-insights" : "false",
+    "--enable-glue-datacatalog" : "true",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-assets-578236606604-us-east-1/temporary/"
+  },
+  "connections" : {
+    "connections" : [ "mailmodo_rds_connection" ]
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 0,
+  "timeout" : 10,
+  "maxCapacity" : 0.0625,
+  "glueVersion" : "3.0",
+  "executionClass" : "STANDARD",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "tes",
+    "branch" : "main",
+    "folder" : "SKUwise Pageviews"
+  }
+}
